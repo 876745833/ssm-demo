@@ -19,6 +19,7 @@ public class UserloginServiceImpl implements UserloginService {
     private UserloginMapper userloginMapper;
 
 
+    @Override
     public Userlogin findByName(String name) throws Exception {
         UserloginExample userloginExample = new UserloginExample();
 
@@ -30,10 +31,12 @@ public class UserloginServiceImpl implements UserloginService {
         return list.get(0);
     }
 
+    @Override
     public void save(Userlogin userlogin) throws Exception {
         userloginMapper.insert(userlogin);
     }
 
+    @Override
     public void removeByName(String name) throws Exception {
         UserloginExample userloginExample = new UserloginExample();
 
